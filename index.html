@@ -185,102 +185,6 @@
     </div>
 
     <script>
-        // Sample product data - replace this with your actual JSON file
-        const productData = {
-            "products": [
-                {
-                    "id": 1,
-                    "name": "Classic White Shirt",
-                    "price": "$49.99",
-                    "colors": [
-                        {
-                            "name": "White",
-                            "color": "#ffffff",
-                            "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=600&fit=crop"
-                        },
-                        {
-                            "name": "Light Blue",
-                            "color": "#87ceeb",
-                            "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=600&fit=crop"
-                        },
-                        {
-                            "name": "Pink",
-                            "color": "#ffc0cb",
-                            "image": "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&h=600&fit=crop"
-                        }
-                    ]
-                },
-                {
-                    "id": 2,
-                    "name": "Denim Jacket",
-                    "price": "$89.99",
-                    "colors": [
-                        {
-                            "name": "Classic Blue",
-                            "color": "#4682b4",
-                            "image": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=600&fit=crop"
-                        },
-                        {
-                            "name": "Black",
-                            "color": "#2c2c2c",
-                            "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=600&fit=crop"
-                        }
-                    ]
-                },
-                {
-                    "id": 3,
-                    "name": "Summer Dress",
-                    "price": "$79.99",
-                    "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=600&fit=crop"
-                },
-                {
-                    "id": 4,
-                    "name": "Knit Sweater",
-                    "price": "$65.99",
-                    "colors": [
-                        {
-                            "name": "Cream",
-                            "color": "#f5f5dc",
-                            "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&h=600&fit=crop"
-                        },
-                        {
-                            "name": "Gray",
-                            "color": "#808080",
-                            "image": "https://images.unsplash.com/photo-1583743814966-8936f37f603b?w=400&h=600&fit=crop"
-                        },
-                        {
-                            "name": "Navy",
-                            "color": "#000080",
-                            "image": "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&h=600&fit=crop"
-                        }
-                    ]
-                },
-                {
-                    "id": 5,
-                    "name": "Casual Sneakers",
-                    "price": "$99.99",
-                    "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=600&fit=crop"
-                },
-                {
-                    "id": 6,
-                    "name": "Leather Boots",
-                    "price": "$149.99",
-                    "colors": [
-                        {
-                            "name": "Brown",
-                            "color": "#8b4513",
-                            "image": "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=400&h=600&fit=crop"
-                        },
-                        {
-                            "name": "Black",
-                            "color": "#000000",
-                            "image": "https://images.unsplash.com/photo-1542280756-74b2f55e73ab?w=400&h=600&fit=crop"
-                        }
-                    ]
-                }
-            ]
-        };
-
         class ClothesShop {
             constructor() {
                 this.products = [];
@@ -295,15 +199,40 @@
 
             async loadProducts() {
                 try {
-                    // In a real application, you would fetch from a JSON file:
                     const response = await fetch('./products.json');
-                    this.products = await response.json();
-                    
-                    // For this demo, we're using the inline data
-                    //this.products = productData.products;
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    this.products = data.products;
                 } catch (error) {
                     console.error('Error loading products:', error);
-                    this.container.innerHTML = '<div class="loading">Error loading products</div>';
+                    // Fallback to sample data if JSON file can't be loaded
+                    this.products = [
+                        {
+                            "id": 1,
+                            "name": "Body Básico",
+                            "price": "$395",
+                            "colors": [
+                                {
+                                    "name": "Rojo",
+                                    "color": "#ca252c",
+                                    "image": "images/bodybasico_rojo.jpg"
+                                },
+                                {
+                                    "name": "Blanco",
+                                    "color": "#FFFFFF",
+                                    "image": "images/bodybasico_blanco.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "name": "Falda Larga",
+                            "price": "$360",
+                            "image": "images/faldalarga.jpg"
+                        }
+                    ];
                 }
             }
 
