@@ -14,14 +14,73 @@
           "name": "Blanco",
           "color": "#FFFFFF",
           "image": "images/bodybasico_blanco.jpg"
+        },
+        {
+          "name": "Negro",
+          "color": "#000000",
+          "image": "images/bodybasico_negro.jpg"
+        },
+        {
+          "name": "Beige",
+          "color": "#c3ab91",
+          "image": "images/bodybasico_beige.jpg"
+        },
+        {
+          "name": "Rosa",
+          "color": "#ad9497",
+          "image": "images/bodybasico_rosa.jpg"
+        }
+
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Body Cuadrado",
+      "price": "$395",
+      "colors": [
+        {
+          "name": "Rojo",
+          "color": "#ca252c",
+          "image": "images/bodycuadrado_rojo.jpg"
+        },
+        {
+          "name": "Blanco",
+          "color": "#FFFFFF",
+          "image": "images/bodycuadrado_blanco.jpg"
+        },
+        {
+          "name": "Tinto",
+          "color": "#351114",
+          "image": "images/bodycuadrado_tinto.jpg"
+        },
+        {
+          "name": "Café",
+          "color": "#613f26",
+          "image": "images/bodycuadrado_cafe.jpg"
         }
       ]
     },
     {
-      "id": 2,
+      "id": 3,
       "name": "Falda Larga",
       "price": "$360",
       "image": "images/faldalarga.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Blusas largas corte cuadrado",
+      "price": "$250",
+      "colors": [
+        {
+          "name": "Imagen1",
+          "gradient": "linear-gradient(90deg, #828c07, #ab6339)",
+          "image": "images/blusacuadrado1.jpg"
+        },
+        {
+          "name": "Imagen2",
+          "gradient": "linear-gradient(90deg, #ab815b, #b25208)",
+          "image": "images/blusacuadrado2.jpg"
+        }]
     }
   ]
 }

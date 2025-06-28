@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion Store</title>
     <style>
+        /* Custom Font Declaration */
+        @font-face {
+            font-family: 'Rische-Light';
+            src: url('fonts/Rische-Light.eot'); /* IE9 Compat Modes */
+            src: url('fonts/Rische-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                 url('fonts/Rische-Light.woff2') format('woff2'), /* Modern Browsers */
+                 url('fonts/Rische-Light.woff') format('woff'), /* Pretty Modern Browsers */
+                 url('fonts/Rische-Light.ttf') format('truetype'); /* Safari, Android, iOS */
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -83,21 +96,26 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            font-family: 'Rische-Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         .product-name {
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 15px;
+            font-weight: 700;
             color: #2d3748;
-            margin-bottom: 4px;
-            line-height: 1.3;
+            margin-bottom: 6px;
+            line-height: 1.4;
+            font-family: 'Rische-Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            letter-spacing: 0.5px;
         }
 
         .product-price {
-            font-size: 16px;
-            font-weight: bold;
+            font-size: 17px;
+            font-weight: 700;
             color: #667eea;
             margin-bottom: 8px;
+            font-family: 'Rische-Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            letter-spacing: 0.3px;
         }
 
         /* Color Swatches */
@@ -162,11 +180,11 @@
             }
             
             .product-name {
-                font-size: 13px;
+                font-size: 14px;
             }
             
             .product-price {
-                font-size: 15px;
+                font-size: 16px;
             }
         }
     </style>
@@ -207,7 +225,7 @@
                     this.products = data.products;
                 } catch (error) {
                     console.error('Error loading products:', error);
-                    // Fallback to sample data if JSON file can't be loaded
+                    // Fallback to sample data with gradients
                     this.products = [
                         {
                             "id": 1,
@@ -231,6 +249,45 @@
                             "name": "Falda Larga",
                             "price": "$360",
                             "image": "images/faldalarga.jpg"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Vestido Sunset",
+                            "price": "$520",
+                            "colors": [
+                                {
+                                    "name": "Sunset Gradient",
+                                    "gradient": "linear-gradient(45deg, #ff6b6b, #ffd93d)",
+                                    "image": "images/vestido_sunset.jpg"
+                                },
+                                {
+                                    "name": "Ocean Gradient",
+                                    "gradient": "linear-gradient(45deg, #667eea, #764ba2)",
+                                    "image": "images/vestido_ocean.jpg"
+                                },
+                                {
+                                    "name": "Purple",
+                                    "color": "#9c27b0",
+                                    "image": "images/vestido_purple.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "name": "Camisa Rainbow",
+                            "price": "$450",
+                            "colors": [
+                                {
+                                    "name": "Rainbow",
+                                    "gradient": "linear-gradient(90deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080)",
+                                    "image": "images/camisa_rainbow.jpg"
+                                },
+                                {
+                                    "name": "Mint to Pink",
+                                    "gradient": "linear-gradient(135deg, #667eea, #f093fb)",
+                                    "image": "images/camisa_mint_pink.jpg"
+                                }
+                            ]
                         }
                     ];
                 }
@@ -273,12 +330,17 @@
             }
 
             createColorSwatches(colors) {
-                return colors.map((color, index) => 
-                    `<div class="color-swatch ${index === 0 ? 'active' : ''}" 
-                          data-color-index="${index}" 
-                          style="background-color: ${color.color}"
-                          title="${color.name}"></div>`
-                ).join('');
+                return colors.map((colorOption, index) => {
+                    // Check if it's a gradient or solid color
+                    const backgroundStyle = colorOption.gradient 
+                        ? `background: ${colorOption.gradient}` 
+                        : `background-color: ${colorOption.color}`;
+                    
+                    return `<div class="color-swatch ${index === 0 ? 'active' : ''}" 
+                              data-color-index="${index}" 
+                              style="${backgroundStyle}"
+                              title="${colorOption.name}"></div>`;
+                }).join('');
             }
 
             attachColorHandlers(card, colors) {
