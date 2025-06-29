@@ -2,6 +2,23 @@
   "products": [
     {
       "id": 1,
+      "name": "Vestido midi con apertura en pierna",
+      "price": "$435",
+      "colors": [
+        {
+          "name": "Imagen1",
+          "gradient": "linear-gradient(90deg, #828c07, #ab6339)",
+          "image": "images/midi1.jpg"
+        },
+        {
+          "name": "Imagen2",
+          "gradient": "linear-gradient(90deg, #ab815b, #b25208)",
+          "image": "images/midi2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
       "name": "Body Básico",
       "price": "$395",
       "colors": [
@@ -34,7 +51,7 @@
       ]
     },
     {
-      "id": 1,
+      "id": 3,
       "name": "Body Cuadrado",
       "price": "$395",
       "colors": [
@@ -61,13 +78,7 @@
       ]
     },
     {
-      "id": 3,
-      "name": "Falda Larga",
-      "price": "$360",
-      "image": "images/faldalarga.jpg"
-    },
-    {
-      "id": 4,
+      "id": 5,
       "name": "Blusas largas corte cuadrado",
       "price": "$250",
       "colors": [
@@ -80,7 +91,218 @@
           "name": "Imagen2",
           "gradient": "linear-gradient(90deg, #ab815b, #b25208)",
           "image": "images/blusacuadrado2.jpg"
-        }]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Blusa manga larga corte cuadrado ",
+      "price": "$300",
+      "image": "images/mangalarga.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Blusa asimétrica",
+      "price": "$280",
+      "image": "images/asimetrica.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Corte cuadrado manga larga crop",
+      "price": "$280",
+      "image": "images/croplarga.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Blusa mesh",
+      "price": "$200",
+      "colors": [
+        {
+          "name": "Cafe",
+          "color": "#5c372a",
+          "image": "images/mesh_cafe.jpg"
+        },
+        {
+          "name": "Negro",
+          "color": "#161616",
+          "image": "images/mesh_negro.jpg"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Blusa strapless",
+      "price": "$250",
+      "colors": [
+        {
+          "name": "Rosa",
+          "color": "#c8afb2",
+          "image": "images/strap_rosa.jpg"
+        },
+        {
+          "name": "Blanca",
+          "color": "#FFFFFF",
+          "image": "images/strap_blanca.jpg"
+        },
+        {
+          "name": "Roja",
+          "color": "#0d1215",
+          "image": "images/strap_roja.jpg"
+        },
+        {
+          "name": "Tinto",
+          "color": "#411a22",
+          "image": "images/strap_tinta.jpg"
+        },
+        {
+          "name": "Azul",
+          "color": "#aac9dd",
+          "image": "images/strap_azul.jpg"
+        },
+        {
+          "name": "Negro",
+          "color": "#0d1215",
+          "image": "images/strap_negra.jpg"
+        },
+        {
+          "name": "General",
+          "gradient": "linear-gradient(90deg, #d52723, #a8c5db)",
+          "image": "images/strap_gen.jpg"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Blusa strapless manga larga",
+      "price": "$300",
+      "colors": [
+        {
+          "name": "Cafe",
+          "color": "#6a5951",
+          "image": "images/strapcafel.jpg"
+        },
+        {
+          "name": "Negro",
+          "color": "#060c0c",
+          "image": "images/strapnegrol.jpg"
+        },
+        {
+          "name": "Base",
+          "gradient": "linear-gradient(90deg, #d3a67c, #441222)",
+          "image": "images/strapgenl.jpg"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Blusa strapless sencilla",
+      "price": "$250",
+      "colors": [
+        {
+          "name": "Blanca",
+          "color": "#FFFFFF",
+          "image": "images/strapsencilla_blanca.jpg"
+        },
+        {
+          "name": "Base",
+          "gradient": "linear-gradient(90deg, #af947f, #0f4047)",
+          "image": "images/strapsenc_gen.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Falda Larga",
+      "price": "$360",
+      "image": "images/faldalarga.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Blusa strapless asimétrica",
+      "price": "$250",
+      "colors": [
+        {
+          "name": "Imagen1",
+          "gradient": "linear-gradient(90deg, #3b1929, #FFFFFF)",
+          "image": "images/asim1.jpg"
+        },
+        {
+          "name": "Imagen2",
+          "gradient": "linear-gradient(90deg, #cdbebd, #0f1015)",
+          "image": "images/asim2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Blusa tirantes básica",
+      "price": "$250",
+      "image": "images/tirante_basica.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Blusa tirantes cuadrada",
+      "price": "$250",
+      "image": "images/tirante_cuadrada.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Blusa básica",
+      "price": "$280",
+      "image": "images/blusa_basica.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Corte cuadrado manga corta crop",
+      "price": "$250",
+      "image": "images/corta_crop.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Blusa tirantes básica",
+      "price": "$250",
+      "image": "images/basica_tirante.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Blusa larga cuadrada",
+      "price": "$280",
+      "image": "images/cuadrada_larga.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Conuntos comfy",
+      "price": "$460",
+      "colors": [
+        {
+          "name": "Azul",
+          "color": "#054c5b",
+          "image": "images/comfy_azul.jpg"
+        },
+        {
+          "name": "Cafe",
+          "color": "#7d6750",
+          "image": "images/comfy_cafe.jpg"
+        },
+        {
+          "name": "Tinto",
+          "color": "#58222f",
+          "image": "images/comfy_tinto.jpg"
+        },
+        {
+          "name": "Gris",
+          "color": "#505662",
+          "image": "images/comfy_gris.jpg"
+        },
+        {
+          "name": "gen",
+          "color": "#0b1013",
+          "image": "images/comfy_gen.jpg"
+        }
+      ]
     }
+    
+    
+
   ]
 }
